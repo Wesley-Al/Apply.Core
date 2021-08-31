@@ -1,0 +1,11 @@
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Apply.exe
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\appsettings.Development.json
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\appsettings.json
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Apply.dll
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Apply.deps.json
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Apply.runtimeconfig.json
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Apply.pdb
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Microsoft.OpenApi.dll
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\git\Apply\Core\Apply.Core\Apply\bin\Release\net5.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
