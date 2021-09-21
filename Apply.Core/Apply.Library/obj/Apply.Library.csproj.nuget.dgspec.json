@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {}
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {}
   },
   "projects": {
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+        "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
         "projectName": "Apply.Library",
-        "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+        "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\obj\\",
+        "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config",

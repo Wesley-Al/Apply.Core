@@ -30,16 +30,7 @@ namespace Apply
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string mySqlConection = Configuration.GetConnectionString("DefaultConnection");
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {                                     
-                                      builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-                                  });
-            });              
+            string mySqlConection = Configuration.GetConnectionString("Conn");
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -56,6 +47,15 @@ namespace Apply
             services.AddDbContextPool<Context>(options =>
                 options.UseMySql(mySqlConection,
                       ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Apply.Library")));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                                  });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

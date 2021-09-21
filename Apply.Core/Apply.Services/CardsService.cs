@@ -14,9 +14,7 @@ namespace Apply.Services
 
         public CardsService(Context context)
         {
-            DbContextOptions<Context> dbContextOptions = new DbContextOptions<Context>();
-
-            Context = new Context(dbContextOptions);
+            Context = context;
         }
 
         public bool DeleteAll(long codWallet)

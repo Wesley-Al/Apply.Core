@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply\\Apply.csproj": {}
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply\\Apply.csproj": {}
   },
   "projects": {
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+        "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
         "projectName": "Apply.Library",
-        "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+        "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\obj\\",
+        "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,14 +112,14 @@
         }
       }
     },
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj": {
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj",
+        "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj",
         "projectName": "Apply.Services",
-        "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj",
+        "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\obj\\",
+        "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -136,8 +136,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
-                "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj"
+              "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
+                "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj"
               }
             }
           }
@@ -188,14 +188,14 @@
         }
       }
     },
-    "D:\\git\\Apply\\Core\\Apply.Core\\Apply\\Apply.csproj": {
+    "D:\\git\\Apply.Core\\Apply.Core\\Apply\\Apply.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\Apply\\Core\\Apply.Core\\Apply\\Apply.csproj",
+        "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply\\Apply.csproj",
         "projectName": "Apply",
-        "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply\\Apply.csproj",
+        "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply\\Apply.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply\\obj\\",
+        "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -212,11 +212,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
-                "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj"
+              "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj": {
+                "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj"
               },
-              "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj": {
-                "projectPath": "D:\\git\\Apply\\Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj"
+              "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj": {
+                "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj"
               }
             }
           }

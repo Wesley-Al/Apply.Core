@@ -21,12 +21,13 @@ namespace Apply.Library
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var conn = "server=sql529.main-hosting.eu; port=3306; database=u922704232_apply; user=u922704232_wesley; password={Programador}2; Persist Security Info=False";
             //optionsBuilder.UseSqlServer("Password={Programador};Persist Security Info=True;User ID=Wesley;Initial Catalog=Apply;Data Source=DESKTOP-C3Q3K9Q");
 
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost; port=3306; database=Apply; user=root; password={Programador}2; Persist Security Info=False",
-                        ServerVersion.AutoDetect("server=localhost; port=3306; database=Apply; user=root; password={Programador}2; Persist Security Info=False"));
+                optionsBuilder.UseMySql(conn,
+                        ServerVersion.AutoDetect(conn));
             }
         }
 
