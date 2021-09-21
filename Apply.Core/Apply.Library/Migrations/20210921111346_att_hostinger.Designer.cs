@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Apply.Library.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210912232939_att7")]
-    partial class att7
+    [Migration("20210921111346_att_hostinger")]
+    partial class att_hostinger
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

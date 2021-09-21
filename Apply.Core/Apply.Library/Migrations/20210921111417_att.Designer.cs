@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Apply.Library.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210905203021_init")]
-    partial class init
+    [Migration("20210921111417_att")]
+    partial class att
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,6 +66,9 @@ namespace Apply.Library.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("TypeCard")
+                        .HasColumnType("longtext");
+
                     b.Property<long?>("WalletNavigationCodWallet")
                         .HasColumnType("bigint");
 
@@ -76,87 +79,6 @@ namespace Apply.Library.Migrations
                     b.HasIndex("WalletNavigationCodWallet");
 
                     b.ToTable("Card");
-                });
-
-            modelBuilder.Entity("Apply.Library.FlowClosed", b =>
-                {
-                    b.Property<long>("CodFlowClosed")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Amount")
-                        .HasColumnType("longtext");
-
-                    b.Property<long?>("BankNavigationCodBank")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodBank")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodWallet")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("TimeString")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("longtext");
-
-                    b.Property<long?>("WalletNavigationCodWallet")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("CodFlowClosed");
-
-                    b.HasIndex("BankNavigationCodBank");
-
-                    b.HasIndex("WalletNavigationCodWallet");
-
-                    b.ToTable("FlowClosed");
-                });
-
-            modelBuilder.Entity("Apply.Library.Payment", b =>
-                {
-                    b.Property<long>("CodPayment")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Amount")
-                        .HasColumnType("longtext");
-
-                    b.Property<long?>("BankNavigationCodBank")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodBank")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodWallet")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("TimeString")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("longtext");
-
-                    b.Property<long?>("WalletNavigationCodWallet")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("CodPayment");
-
-                    b.HasIndex("BankNavigationCodBank");
-
-                    b.HasIndex("WalletNavigationCodWallet");
-
-                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("Apply.Library.Usuario", b =>
@@ -234,36 +156,6 @@ namespace Apply.Library.Migrations
                 });
 
             modelBuilder.Entity("Apply.Library.Cards", b =>
-                {
-                    b.HasOne("Apply.Library.Bank", "BankNavigation")
-                        .WithMany()
-                        .HasForeignKey("BankNavigationCodBank");
-
-                    b.HasOne("Apply.Library.Wallet", "WalletNavigation")
-                        .WithMany()
-                        .HasForeignKey("WalletNavigationCodWallet");
-
-                    b.Navigation("BankNavigation");
-
-                    b.Navigation("WalletNavigation");
-                });
-
-            modelBuilder.Entity("Apply.Library.FlowClosed", b =>
-                {
-                    b.HasOne("Apply.Library.Bank", "BankNavigation")
-                        .WithMany()
-                        .HasForeignKey("BankNavigationCodBank");
-
-                    b.HasOne("Apply.Library.Wallet", "WalletNavigation")
-                        .WithMany()
-                        .HasForeignKey("WalletNavigationCodWallet");
-
-                    b.Navigation("BankNavigation");
-
-                    b.Navigation("WalletNavigation");
-                });
-
-            modelBuilder.Entity("Apply.Library.Payment", b =>
                 {
                     b.HasOne("Apply.Library.Bank", "BankNavigation")
                         .WithMany()

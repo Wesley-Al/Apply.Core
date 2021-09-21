@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Apply.Library.Migrations
 {
-    public partial class init : Migration
+    public partial class att_hostinger : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,7 +67,9 @@ namespace Apply.Library.Migrations
                     CodWallet = table.Column<long>(type: "bigint", nullable: false),
                     WalletNavigationCodWallet = table.Column<long>(type: "bigint", nullable: true),
                     CodBank = table.Column<long>(type: "bigint", nullable: false),
-                    BankNavigationCodBank = table.Column<long>(type: "bigint", nullable: true)
+                    BankNavigationCodBank = table.Column<long>(type: "bigint", nullable: true),
+                    TypeCard = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -80,80 +82,6 @@ namespace Apply.Library.Migrations
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Card_Wallet_WalletNavigationCodWallet",
-                        column: x => x.WalletNavigationCodWallet,
-                        principalTable: "Wallet",
-                        principalColumn: "CodWallet",
-                        onDelete: ReferentialAction.Restrict);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "FlowClosed",
-                columns: table => new
-                {
-                    CodFlowClosed = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Description = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TimeString = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Title = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CodWallet = table.Column<long>(type: "bigint", nullable: false),
-                    WalletNavigationCodWallet = table.Column<long>(type: "bigint", nullable: true),
-                    CodBank = table.Column<long>(type: "bigint", nullable: false),
-                    BankNavigationCodBank = table.Column<long>(type: "bigint", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FlowClosed", x => x.CodFlowClosed);
-                    table.ForeignKey(
-                        name: "FK_FlowClosed_Banks_BankNavigationCodBank",
-                        column: x => x.BankNavigationCodBank,
-                        principalTable: "Banks",
-                        principalColumn: "CodBank",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_FlowClosed_Wallet_WalletNavigationCodWallet",
-                        column: x => x.WalletNavigationCodWallet,
-                        principalTable: "Wallet",
-                        principalColumn: "CodWallet",
-                        onDelete: ReferentialAction.Restrict);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Payment",
-                columns: table => new
-                {
-                    CodPayment = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TimeString = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Title = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CodWallet = table.Column<long>(type: "bigint", nullable: false),
-                    WalletNavigationCodWallet = table.Column<long>(type: "bigint", nullable: true),
-                    CodBank = table.Column<long>(type: "bigint", nullable: false),
-                    BankNavigationCodBank = table.Column<long>(type: "bigint", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Payment", x => x.CodPayment);
-                    table.ForeignKey(
-                        name: "FK_Payment_Banks_BankNavigationCodBank",
-                        column: x => x.BankNavigationCodBank,
-                        principalTable: "Banks",
-                        principalColumn: "CodBank",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Payment_Wallet_WalletNavigationCodWallet",
                         column: x => x.WalletNavigationCodWallet,
                         principalTable: "Wallet",
                         principalColumn: "CodWallet",
@@ -227,26 +155,6 @@ namespace Apply.Library.Migrations
                 column: "WalletNavigationCodWallet");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlowClosed_BankNavigationCodBank",
-                table: "FlowClosed",
-                column: "BankNavigationCodBank");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_FlowClosed_WalletNavigationCodWallet",
-                table: "FlowClosed",
-                column: "WalletNavigationCodWallet");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Payment_BankNavigationCodBank",
-                table: "Payment",
-                column: "BankNavigationCodBank");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Payment_WalletNavigationCodWallet",
-                table: "Payment",
-                column: "WalletNavigationCodWallet");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Usuario_WalletNavigationCodWallet",
                 table: "Usuario",
                 column: "WalletNavigationCodWallet");
@@ -271,12 +179,6 @@ namespace Apply.Library.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Card");
-
-            migrationBuilder.DropTable(
-                name: "FlowClosed");
-
-            migrationBuilder.DropTable(
-                name: "Payment");
 
             migrationBuilder.DropTable(
                 name: "UsuarioWallet");
