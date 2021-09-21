@@ -32,6 +32,15 @@ namespace Apply
         {
             string mySqlConection = Configuration.GetConnectionString("Conn");
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                    });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -48,14 +57,14 @@ namespace Apply
                 options.UseMySql(mySqlConection,
                       ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Apply.Library")));
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-                                  });
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: MyAllowSpecificOrigins,
+            //                      builder =>
+            //                      {
+            //                          builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+            //                      });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +77,8 @@ namespace Apply
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Apply v1"));
             }
 
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors();
+            //app.UseCors(MyAllowSpecificOrigins);
 
             app.UseHttpsRedirection();
 
