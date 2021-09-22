@@ -1,11 +1,8 @@
 ﻿using Apply.Library;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Data;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,18 +10,18 @@ namespace Apply.Services
 {
     public class WalletService : IWalletService
     {
-        private readonly Context context;
+        private readonly Context Context;
 
         public WalletService(Context context)
         {
-            this.context = context;            
+            this.Context = context;            
         }
 
         public Wallet GetWalletByUsuCod(long usuCod)
         {
             try
             {
-                return context.UsuarioWallet
+                return Context.UsuarioWallet
                     .Include(x => x.CodWallet)
                     .Include(x => x.CodUsuario)
                     .Where(x => x.CodUsuario.CodUsuario == usuCod)
@@ -44,9 +41,9 @@ namespace Apply.Services
             {
                 wallet.CodBank = 1;
 
-                Bank bank = context.Banks.Where(x => x.CodBank == 1).FirstOrDefault();
+                Bank bank = Context.Banks.Where(x => x.CodBank == 1).FirstOrDefault();
 
-                var Wallet = context.Usuario.Include(x => x.WalletNavigation)
+                var Wallet = Context.Usuario.Include(x => x.WalletNavigation)
                     .Where(x => x.CodUsuario == wallet.CodUsuario)
                     .FirstOrDefault()
                     .WalletNavigation;
@@ -80,9 +77,9 @@ namespace Apply.Services
                 Cards.AddRange(wallet.FlowClosed);
                 Cards.AddRange(wallet.Payments);
 
-                context.Card.AddRange(Cards);
+                Context.Card.AddRange(Cards);
 
-                await context.SaveChangesAsync();
+                await Context.SaveChangesAsync();
                 return true;
             }
 
@@ -102,7 +99,7 @@ namespace Apply.Services
 
                 var queryData = string.IsNullOrEmpty(dataJoined) ? Array.Empty<string>() : dataJoined.Split(",");
 
-                QueryWallet = context.Usuario.Include(x => x.WalletNavigation).ThenInclude(x => x.BankNavigation)
+                QueryWallet = Context.Usuario.Include(x => x.WalletNavigation).ThenInclude(x => x.BankNavigation)
                   .Where(x => x.CodUsuario == codUsuario)
                   .FirstOrDefault()
                   .WalletNavigation;
@@ -118,13 +115,13 @@ namespace Apply.Services
 
                     foreach (var item in queryData)
                     {
-                        wallet.Payments.AddRange(context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P" && x.TimeString.IndexOf(item) > -1)
+                        wallet.Payments.AddRange(Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P" && x.TimeString.IndexOf(item) > -1)
                         .ToList().OrderBy(x => x.Description));
 
-                        wallet.Cards.AddRange(context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C" && x.TimeString.IndexOf(item) > -1)
+                        wallet.Cards.AddRange(Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C" && x.TimeString.IndexOf(item) > -1)
                         .ToList().OrderBy(x => x.TimeString));
 
-                        wallet.FlowClosed.AddRange(context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F" && x.TimeString.IndexOf(item) > -1)
+                        wallet.FlowClosed.AddRange(Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F" && x.TimeString.IndexOf(item) > -1)
                         .ToList().OrderBy(x => x.TimeString));
                     }
 
@@ -144,13 +141,13 @@ namespace Apply.Services
                 {
                     var wallet = new
                     {
-                       Payments = context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P")
+                       Payments = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P")
                         .ToList(),
 
-                       Cards = context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C")
+                       Cards = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C")
                         .ToList().GroupBy(x => new { x.TimeString }),
 
-                       FlowClosed = context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F")
+                       FlowClosed = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F")
                         .ToList()
                     };
 
