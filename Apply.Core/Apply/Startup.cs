@@ -31,24 +31,24 @@ namespace Apply
         public void ConfigureServices(IServiceCollection services)
         {
             string mySqlConection = Configuration.GetConnectionString("Conn");
-            string[] origins = new string[] { "https://intru.net/", "http://intru/" };
-
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(name: MyAllowSpecificOrigins,
-            //                      builder =>
-            //                      {
-            //                          builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-            //                      });
-            //});
+            string[] origins = new string[] { "https://intru.net", "http://intru" };
 
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(builder =>
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
                                   {
-                                      builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                                      builder.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod();
                                   });
             });
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(builder =>
+            //                      {
+            //                          builder.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod();
+            //                      });
+            //});
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -77,8 +77,8 @@ namespace Apply
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Apply v1"));
             }
 
-            app.UseCors();
-            //app.UseCors(MyAllowSpecificOrigins);
+            //app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseHttpsRedirection();
 
