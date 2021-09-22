@@ -10,7 +10,7 @@ namespace Apply.Services
 {
     public class WalletService : IWalletService
     {
-        private readonly Context Context;
+        private Context Context;
 
         public WalletService(Context context)
         {
