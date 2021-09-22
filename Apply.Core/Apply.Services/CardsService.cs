@@ -22,7 +22,7 @@ namespace Apply.Services
                     .ToArray());                
 
                 return Context.SaveChanges() > 0;
-            }catch(Exception error)
+            }catch(Exception)
             {
                 throw;
             }
