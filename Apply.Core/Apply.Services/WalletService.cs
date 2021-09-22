@@ -14,12 +14,10 @@ namespace Apply.Services
     public class WalletService : IWalletService
     {
         private readonly Context context;
-        private ISecurityService SecuritySVC;
 
-        public WalletService(Context context, ISecurityService securitySVC)
+        public WalletService(Context context)
         {
-            this.context = context;
-            this.SecuritySVC = securitySVC;
+            this.context = context;            
         }
 
         public Wallet GetWalletByUsuCod(long usuCod)
@@ -34,7 +32,7 @@ namespace Apply.Services
                     .FirstOrDefault();
 
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 throw;
             }
@@ -173,9 +171,9 @@ namespace Apply.Services
 
                 return parameters;
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                throw error;
+                throw;
             }
         }
     }
