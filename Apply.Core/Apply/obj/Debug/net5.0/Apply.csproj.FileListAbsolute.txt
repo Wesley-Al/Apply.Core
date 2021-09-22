@@ -136,4 +136,3 @@ D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.dll
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\ref\Apply.dll
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.pdb
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.genruntimeconfig.cache
-D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\web.config
