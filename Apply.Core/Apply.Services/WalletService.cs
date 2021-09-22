@@ -13,13 +13,13 @@ namespace Apply.Services
 {
     public class WalletService : IWalletService
     {
-        static private Context context;
+        private readonly Context context;
         private ISecurityService SecuritySVC;
 
-        public WalletService(Context _context, ISecurityService securitySVC)
+        public WalletService(Context context, ISecurityService securitySVC)
         {
-            context = _context;
-            SecuritySVC = securitySVC;
+            this.context = context;
+            this.SecuritySVC = securitySVC;
         }
 
         public Wallet GetWalletByUsuCod(long usuCod)
