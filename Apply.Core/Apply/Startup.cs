@@ -23,7 +23,7 @@ namespace Apply
         {
             Configuration = configuration;
         }
-        //readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public IConfiguration Configuration { get; }
 
@@ -31,14 +31,23 @@ namespace Apply
         public void ConfigureServices(IServiceCollection services)
         {
             string mySqlConection = Configuration.GetConnectionString("Conn");
+            string[] origins = new string[] { "https://intru.net/", "http://intru/" };
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: MyAllowSpecificOrigins,
+            //                      builder =>
+            //                      {
+            //                          builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            //                      });
+            //});
 
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-                    });
+                options.AddDefaultPolicy(builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                                  });
             });
 
             services.AddControllers();
@@ -55,16 +64,7 @@ namespace Apply
 
             services.AddDbContextPool<Context>(options =>
                 options.UseMySql(mySqlConection,
-                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Apply.Library")));
-
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(name: MyAllowSpecificOrigins,
-            //                      builder =>
-            //                      {
-            //                          builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-            //                      });
-            //});
+                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Apply.Library")));            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
