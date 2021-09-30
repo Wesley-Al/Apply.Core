@@ -1,8 +1,8 @@
-﻿using Apply.Library;
+﻿using Intru.Library;
 using System;
 using System.Linq;
 
-namespace Apply.Services
+namespace Intru.Services
 {
     public class SecurityService : ISecurityService
     {

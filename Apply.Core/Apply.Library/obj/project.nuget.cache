@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yRnW4J45zQg18t+7sZZ6sHqx/5ajjhX+N+VCJVynSur9nGkxiB8rRVq+pqvMTPoldb370zjJy0oWAxt3CnMUqw==",
+  "dgSpecHash": "qiZ/UrQclDDcRrvUgVTRrPNqEcG1+5v5gq1zsmJ1USsbZ/fMdwGydcuy1OQ9jJ5KfIcxww7F4Ni29QEGP0mSGw==",
   "success": true,
-  "projectFilePath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+  "projectFilePath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Intru.Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wesle\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wesle\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

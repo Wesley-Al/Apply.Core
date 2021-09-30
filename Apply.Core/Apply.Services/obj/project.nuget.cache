@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ru7hm05EPnQNlNoQGbCVL6M1YRZq/m+KFO9W/ARSO11Qs2HzlGZ5qSY0Fo3q0Hze3qQen4EYR8dWhl2wXuxJzQ==",
+  "dgSpecHash": "HAMC0qaUdw+LqgOtbj1gxQe1M5Hj642ZCxZBl4ZAc3qk1rfrOywey1wgOEcMHJBbNQuCXBPhn/AyZZ+7A2mjyA==",
   "success": true,
-  "projectFilePath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Apply.Services.csproj",
+  "projectFilePath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Services\\Intru.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wesle\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\wesle\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

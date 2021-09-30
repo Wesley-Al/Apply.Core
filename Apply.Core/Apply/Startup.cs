@@ -1,5 +1,5 @@
-using Apply.Library;
-using Apply.Services;
+using Intru.Library;
+using Intru.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Apply
+namespace Intru
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace Apply
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string mySqlConection = Configuration.GetConnectionString("Conn");
+            string mySqlConection = "server=156.67.72.1; port=3306; database=u922704232_apply; user=u922704232_wesley; password={Programador}2";//Configuration.GetConnectionString("Conn");
             string[] origins = new string[] { "https://intru.net", "http://intru" };
 
             services.AddCors(options =>
@@ -53,7 +53,7 @@ namespace Apply
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Apply", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Intru", Version = "v1" });
             });
 
             services.AddSingleton<Context, Context>();
@@ -64,18 +64,22 @@ namespace Apply
 
             services.AddDbContextPool<Context>(options =>
                 options.UseMySql(mySqlConection,
-                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Apply.Library")));            
+                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Intru.Library")));            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {                
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Apply v1"));
-            }
+            //if (env.IsDevelopment())
+            //{                
+            //    app.UseDeveloperExceptionPage();
+            //    app.UseSwagger();
+            //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Intru v1"));
+            //}
+
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Intru v1"));
 
             //app.UseCors();
             app.UseCors(MyAllowSpecificOrigins);

@@ -6772,9 +6772,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
-      "projectName": "Apply.Library",
-      "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Apply.Library.csproj",
+      "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Intru.Library.csproj",
+      "projectName": "Intru.Library",
+      "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\Intru.Library.csproj",
       "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
       "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Apply.Library\\obj\\",
       "projectStyle": "PackageReference",
@@ -6873,7 +6873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

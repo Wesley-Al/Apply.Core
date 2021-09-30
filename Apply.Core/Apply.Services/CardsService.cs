@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Apply.Library;
+using Intru.Library;
 
-namespace Apply.Services
+namespace Intru.Services
 {
     public class CardsService : ICardsService
     {

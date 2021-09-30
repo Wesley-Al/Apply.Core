@@ -1,12 +1,12 @@
-﻿using Apply.Library;
-using Apply.Services;
+﻿using Intru.Library;
+using Intru.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Apply.Controllers
+namespace Intru.Controllers
 {
     [ApiController]
     [Route("[controller]")]

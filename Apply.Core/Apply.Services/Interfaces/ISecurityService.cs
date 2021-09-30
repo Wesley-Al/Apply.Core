@@ -1,10 +1,10 @@
-﻿using Apply.Library;
+﻿using Intru.Library;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Apply.Services
+namespace Intru.Services
 {
     public interface ISecurityService
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Apply.Library
+namespace Intru.Library
 {
     public class Cards
     {

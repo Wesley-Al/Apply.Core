@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Apply.Library.Migrations
+namespace Intru.Library.Migrations
 {
     public partial class att_hostinger : Migration
     {

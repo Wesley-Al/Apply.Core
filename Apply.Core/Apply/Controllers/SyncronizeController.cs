@@ -1,11 +1,11 @@
-﻿using Apply.Library;
+﻿using Intru.Library;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using Apply.Services;
+using Intru.Services;
 using Newtonsoft.Json;
 
-namespace Apply.Controllers
+namespace Intru.Controllers
 {
     [ApiController]    
     [Route("[controller]")]

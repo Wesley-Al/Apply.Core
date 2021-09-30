@@ -7,6 +7,7 @@ D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.runtimeconfig.dev.json
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\ref\Apply.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.pdb
+D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Docker.DotNet.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Humanizer.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
@@ -51,6 +52,7 @@ D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.Library.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.Services.dll
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.Library.pdb
 D:\git\Apply.Core\Apply.Core\Apply\bin\Debug\net5.0\Apply.Services.pdb
+D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.csproj.AssemblyReference.cache
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.GeneratedMSBuildEditorConfig.editorconfig
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.AssemblyInfoInputs.cache
 D:\git\Apply.Core\Apply.Core\Apply\obj\Debug\net5.0\Apply.AssemblyInfo.cs

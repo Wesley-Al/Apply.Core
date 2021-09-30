@@ -1,4 +1,4 @@
-﻿using Apply.Library;
+﻿using Intru.Library;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Apply.Services
+namespace Intru.Services
 {
     public class WalletService : IWalletService
     {

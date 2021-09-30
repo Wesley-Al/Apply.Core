@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Apply.Library
+namespace Intru.Library
 {
     public class UsuarioParameters
     {

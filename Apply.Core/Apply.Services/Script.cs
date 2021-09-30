@@ -6,7 +6,7 @@ using System.Security;
 using System.Security.Cryptography;
 using System.Security.Principal;
 
-namespace Apply.Services
+namespace Intru.Services
 {
     class Script
     {

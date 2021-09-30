@@ -23,3 +23,4 @@ D:\git\Apply.Core\Apply.Core\Apply.Library\obj\Debug\netcoreapp3.1\Apply.Library
 D:\git\Apply.Core\Apply.Core\Apply.Library\obj\Debug\netcoreapp3.1\Apply.Library.dll
 D:\git\Apply.Core\Apply.Core\Apply.Library\obj\Debug\netcoreapp3.1\Apply.Library.pdb
 D:\git\Apply.Core\Apply.Core\Apply.Library\obj\Debug\netcoreapp3.1\Apply.Library.genruntimeconfig.cache
+D:\git\Apply.Core\Apply.Core\Apply.Library\obj\Debug\netcoreapp3.1\Apply.Library.csproj.AssemblyReference.cache
