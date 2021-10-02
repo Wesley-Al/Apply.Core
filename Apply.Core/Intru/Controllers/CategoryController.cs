@@ -136,5 +136,47 @@ namespace Intru.Controllers
                 return Ok(retorno);
             }
         }
+        [HttpPost("DeleteCategorys")]
+        public ActionResult DeleteCategorys([FromBody] CategoryCardParameters categorys)
+        {
+            Retorno<List<string>> retorno = new Retorno<List<string>>()
+            {
+                Objeto = new List<string>(),
+                ErroMsg = "",
+                Success = true
+            };
+
+            try
+            {
+                List<CategoryCard> categoryCards = iCategoryService.GetAllByUsuCod(categorys.UsuCod).Where(x => categorys.CCCodList.Contains(x.CCCod)).ToList();
+
+                foreach (var item in categoryCards)
+                {
+                    bool possuiCard = iCardsService.GetAllByCCCod(item.CCCod)?.Count() > 0;
+
+                    if (!possuiCard)
+                    {
+                        iCategoryService.Delete(item);
+                    }
+                    else
+                    {
+                        retorno.Objeto.Add($"A Categoria {item.CCName} não pode ser deletada pois pode existir registros vinculaods a ela.");
+                    }
+
+                }
+
+                iCategoryService.Save();
+                return Ok(retorno);
+
+            }
+            catch (Exception error)
+            {
+                retorno.Success = false;
+                retorno.Objeto = null;
+                retorno.ErroMsg = error.InnerException.Message;
+
+                return Ok(retorno);
+            }
+        }
     }
 }
