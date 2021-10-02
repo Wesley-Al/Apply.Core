@@ -47,6 +47,12 @@ namespace Intru.Services
         {
             return Context.Usuario.Where(x => x.UsuarioLogin == usuarioLogin).FirstOrDefault();
         }
+        public Usuario GetByCodUsuario(long usuCod)
+        {
+            return Context.Usuario.Where(x => x.CodUsuario == usuCod).FirstOrDefault();
+
+            
+        }
         public bool AtenticaUsuario(Usuario usuario)
         {
             return Context.Usuario.FirstOrDefault(x => x.UsuarioLogin.Equals(usuario.UsuarioLogin) && x.Senha.Equals(usuario.Senha)) != null;

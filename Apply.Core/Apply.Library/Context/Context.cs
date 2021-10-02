@@ -10,7 +10,8 @@ namespace Intru.Library
         }
 
         public DbSet<Wallet> Wallet { get; set; }
-        public DbSet<Cards> Card { get; set; }        
+        public DbSet<Cards> Card { get; set; }
+        public DbSet<CategoryCard> CategoryCard { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Bank> Banks { get; set; }
         public DbSet<UsuarioWallet> UsuarioWallet { get; set; }

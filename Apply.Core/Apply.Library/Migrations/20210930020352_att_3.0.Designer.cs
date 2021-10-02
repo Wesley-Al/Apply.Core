@@ -3,14 +3,16 @@ using System;
 using Intru.Library;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Intru.Library.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210930020352_att_3.0")]
+    partial class att_30
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +35,7 @@ namespace Intru.Library.Migrations
 
             modelBuilder.Entity("Intru.Library.Cards", b =>
                 {
-                    b.Property<long>("CodCard")
+                    b.Property<long?>("CodCard")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
@@ -46,22 +48,19 @@ namespace Intru.Library.Migrations
                     b.Property<long?>("CategoryCardNavigationCCCod")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CodBank")
+                    b.Property<long>("CodBank")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CodWallet")
+                    b.Property<long>("CodWallet")
                         .HasColumnType("bigint");
-
-                    b.Property<DateTime>("DateRegistro")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<bool?>("NotPayment")
+                    b.Property<bool>("NotPayment")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime?>("Time")
+                    b.Property<DateTime>("Time")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("TimeString")
@@ -96,14 +95,11 @@ namespace Intru.Library.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("CCDataCadatro")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("CCName")
+                    b.Property<string>("CategoryCardName")
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("CCTypeFixed")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<DateTime>("DataCadatro")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<long?>("UsuarioNavigationCodUsuario")
                         .HasColumnType("bigint");

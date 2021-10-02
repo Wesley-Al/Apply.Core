@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 
 namespace Intru.Controllers
 {
-    [ApiController]
-    [AllowAnonymous]
+    [ApiController]    
     [Route("[controller]")]
     public class SecurityController : ControllerBase
     {

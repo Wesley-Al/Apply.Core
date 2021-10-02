@@ -11,6 +11,7 @@ namespace Intru.Services
         bool CadastraUsuario(Usuario usuario);
         bool AtenticaUsuario(Usuario usuario);
         Usuario GetByUsuLogin(string usuarioLogin);
+        Usuario GetByCodUsuario(long usuCod);
         bool VerificaUsuario(string usuarioLogin);
     }
 }

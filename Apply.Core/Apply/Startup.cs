@@ -59,8 +59,10 @@ namespace Intru
             services.AddSingleton<Context, Context>();
 
             services.AddScoped<IWalletService, WalletService>();
+            services.AddScoped<IWalletService, WalletService>();
             services.AddScoped<ICardsService, CardsService>();
             services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<ICategoryService, CategoryService>(); 
 
             services.AddDbContextPool<Context>(options =>
                 options.UseMySql(mySqlConection,

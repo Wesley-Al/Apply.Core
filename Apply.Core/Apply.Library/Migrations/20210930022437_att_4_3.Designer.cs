@@ -3,14 +3,16 @@ using System;
 using Intru.Library;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Intru.Library.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210930022437_att_4_3")]
+    partial class att_4_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,14 +98,11 @@ namespace Intru.Library.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("CCDataCadatro")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("CCName")
+                    b.Property<string>("CategoryCardName")
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("CCTypeFixed")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<DateTime>("DataCadatro")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<long?>("UsuarioNavigationCodUsuario")
                         .HasColumnType("bigint");

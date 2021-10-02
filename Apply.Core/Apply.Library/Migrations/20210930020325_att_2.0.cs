@@ -2,7 +2,7 @@
 
 namespace Intru.Library.Migrations
 {
-    public partial class att : Migration
+    public partial class att_20 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

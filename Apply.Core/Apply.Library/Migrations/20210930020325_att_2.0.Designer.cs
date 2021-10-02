@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Intru.Library.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210921111417_att")]
-    partial class att
+    [Migration("20210930020325_att_2.0")]
+    partial class att_20
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.9");
+                .HasAnnotation("ProductVersion", "5.0.10");
 
             modelBuilder.Entity("Intru.Library.Bank", b =>
                 {
@@ -45,6 +45,9 @@ namespace Intru.Library.Migrations
                     b.Property<long?>("BankNavigationCodBank")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("CategoryCardNavigationCCCod")
+                        .HasColumnType("bigint");
+
                     b.Property<long>("CodBank")
                         .HasColumnType("bigint");
 
@@ -66,6 +69,9 @@ namespace Intru.Library.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Type")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("TypeCard")
                         .HasColumnType("longtext");
 
@@ -76,9 +82,33 @@ namespace Intru.Library.Migrations
 
                     b.HasIndex("BankNavigationCodBank");
 
+                    b.HasIndex("CategoryCardNavigationCCCod");
+
                     b.HasIndex("WalletNavigationCodWallet");
 
                     b.ToTable("Card");
+                });
+
+            modelBuilder.Entity("Intru.Library.CategoryCard", b =>
+                {
+                    b.Property<long>("CCCod")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("CategoryCardName")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("DataCadatro")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<long?>("UsuarioNavigationCodUsuario")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("CCCod");
+
+                    b.HasIndex("UsuarioNavigationCodUsuario");
+
+                    b.ToTable("CategoryCard");
                 });
 
             modelBuilder.Entity("Intru.Library.Usuario", b =>
@@ -161,13 +191,28 @@ namespace Intru.Library.Migrations
                         .WithMany()
                         .HasForeignKey("BankNavigationCodBank");
 
+                    b.HasOne("Intru.Library.CategoryCard", "CategoryCardNavigation")
+                        .WithMany()
+                        .HasForeignKey("CategoryCardNavigationCCCod");
+
                     b.HasOne("Intru.Library.Wallet", "WalletNavigation")
                         .WithMany()
                         .HasForeignKey("WalletNavigationCodWallet");
 
                     b.Navigation("BankNavigation");
 
+                    b.Navigation("CategoryCardNavigation");
+
                     b.Navigation("WalletNavigation");
+                });
+
+            modelBuilder.Entity("Intru.Library.CategoryCard", b =>
+                {
+                    b.HasOne("Intru.Library.Usuario", "UsuarioNavigation")
+                        .WithMany()
+                        .HasForeignKey("UsuarioNavigationCodUsuario");
+
+                    b.Navigation("UsuarioNavigation");
                 });
 
             modelBuilder.Entity("Intru.Library.Usuario", b =>
