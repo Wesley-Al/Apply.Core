@@ -4,23 +4,23 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 
-COPY ["Apply/Apply.csproj", "Apply/"]
-RUN dotnet restore "Apply\Apply.csproj"
-COPY ./Apply ./Apply
+COPY ["Intru/Intru.csproj", "Intru/"]
+RUN dotnet restore "Intru\Intru.csproj"
+COPY ./Intru ./Intru
 
-COPY ["Apply.Library/Apply.Library.csproj", "Apply.Library/"]
-RUN dotnet restore "Apply.Library\Apply.Library.csproj"
-COPY ./Apply.Library ./Apply.Library
+COPY ["Intru.Library/Intru.Library.csproj", "Intru.Library/"]
+RUN dotnet restore "Intru.Library\Intru.Library.csproj"
+COPY ./Intru.Library ./Intru.Library
 
-COPY ["Apply.Services/Apply.Services.csproj", "Apply.Services/"]
-RUN dotnet restore "Apply.Services\Apply.Services.csproj"
-COPY ./Apply.Services ./Apply.Services
+COPY ["Intru.Services/Intru.Services.csproj", "Intru.Services/"]
+RUN dotnet restore "Intru.Services\Intru.Services.csproj"
+COPY ./Intru.Services ./Intru.Services
 
-WORKDIR "/src/Apply"
-RUN dotnet build "Apply.csproj" -c Release -o /app/build
+WORKDIR "/src/Intru"
+RUN dotnet build "Intru.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Apply.csproj" -c Release -o /app/publish
+RUN dotnet publish "Intru.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
@@ -29,5 +29,5 @@ COPY --from=publish /app/publish .
 RUN useradd -m intru
 USER intru
 
-CMD ASPNETCORE_URLS="http://*:$PORT" dotnet Apply.dll
+CMD ASPNETCORE_URLS="http://*:$PORT" dotnet Intru.dll
 
