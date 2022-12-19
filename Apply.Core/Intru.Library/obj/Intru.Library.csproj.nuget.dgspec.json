@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj": {}
+    "D:\\Desenvolvimento\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj": {}
   },
   "projects": {
-    "D:\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj": {
+    "D:\\Desenvolvimento\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj",
         "projectName": "Intru.Library",
-        "projectPath": "D:\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj",
+        "projectPath": "D:\\Desenvolvimento\\git\\Apply.Core\\Apply.Core\\Intru.Library\\Intru.Library.csproj",
         "packagesPath": "C:\\Users\\wesle\\.nuget\\packages\\",
-        "outputPath": "D:\\git\\Apply.Core\\Apply.Core\\Intru.Library\\obj\\",
+        "outputPath": "D:\\Desenvolvimento\\git\\Apply.Core\\Apply.Core\\Intru.Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wesle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -99,7 +99,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -108,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

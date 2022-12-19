@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e571443c-b6c3-4b78-877f-87f8619c4c50": {
+      "ProjectGuid": "e571443c-b6c3-4b78-877f-87f8619c4c50",
+      "DisplayName": "Intru",
+      "ColorIndex": 0
+    },
+    "0909a8b8-c414-4b0e-b153-d909bc5e715b": {
+      "ProjectGuid": "0909a8b8-c414-4b0e-b153-d909bc5e715b",
+      "DisplayName": "Intru.Library",
+      "ColorIndex": 1
+    },
+    "d650089f-3d83-4a97-a0a2-63a2e77dca22": {
+      "ProjectGuid": "d650089f-3d83-4a97-a0a2-63a2e77dca22",
+      "DisplayName": "Intru.Services",
+      "ColorIndex": 2
+    },
+    "d2f392bc-e801-44c5-a349-a3da1f6d1cbe": {
+      "ProjectGuid": "d2f392bc-e801-44c5-a349-a3da1f6d1cbe",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 3
+    },
+    "30403d9f-0dea-4c45-8b99-aa4a826e9d10": {
+      "ProjectGuid": "30403d9f-0dea-4c45-8b99-aa4a826e9d10",
+      "DisplayName": "Intru.Mobile",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

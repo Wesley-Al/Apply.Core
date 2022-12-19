@@ -8,6 +8,7 @@ namespace Intru.Services
     public interface ICardsService
     {
         public bool DeleteAll(long codWallet);
+        public bool DeleteByCod(long codCard);
         public bool CadastraRegistro(CardsParameters cards);
 
         public List<Cards> GetAllByCCCod(long CCCod);

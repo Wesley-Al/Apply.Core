@@ -6,10 +6,12 @@ namespace Intru.Library
 {
     public class CardsParameters
     {
+        public List<long> CCCodList { get; set; }
         public string Amount { get; set; }
         public string Description { get; set; }
         public string Title { get; set; }
-        public string Type { get; set; }
+        public string TypeCard { get; set; }
+        public string Type { get; set; }        
         public long CCCod { get; set; }
         public long UsuCod { get; set; }
         public DateTime? Date { get; set; }

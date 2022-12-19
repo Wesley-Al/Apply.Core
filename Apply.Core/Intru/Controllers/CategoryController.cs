@@ -40,6 +40,7 @@ namespace Intru.Controllers
                 {
                     CategoryCard Category = new CategoryCard
                     {
+                        Color = CategoryParameter.Color,
                         CCDataCadatro = DateTime.Now,
                         CCName = CategoryParameter.CCName,
                         CCTypeFixed = (bool)CategoryParameter.CCTypeFixed,
@@ -77,7 +78,8 @@ namespace Intru.Controllers
                 {
                     CCCod = x.CCCod,
                     CCName = x.CCName,
-                    CCTypeFixed = x.CCTypeFixed
+                    CCTypeFixed = x.CCTypeFixed,
+                    Color = x.Color
                 }).ToList();
 
                 retorno.Objeto = category;

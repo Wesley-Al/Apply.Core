@@ -24,3 +24,16 @@ D:\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library
 D:\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.dll
 D:\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.pdb
 D:\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.genruntimeconfig.cache
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\bin\Debug\netcoreapp3.1\Intru.Library.deps.json
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\bin\Debug\netcoreapp3.1\Intru.Library.runtimeconfig.json
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\bin\Debug\netcoreapp3.1\Intru.Library.runtimeconfig.dev.json
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\bin\Debug\netcoreapp3.1\Intru.Library.dll
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\bin\Debug\netcoreapp3.1\Intru.Library.pdb
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.csproj.AssemblyReference.cache
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.AssemblyInfoInputs.cache
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.AssemblyInfo.cs
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.dll
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.pdb
+D:\Desenvolvimento\git\Apply.Core\Apply.Core\Intru.Library\obj\Debug\netcoreapp3.1\Intru.Library.genruntimeconfig.cache

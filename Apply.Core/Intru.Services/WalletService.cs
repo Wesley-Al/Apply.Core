@@ -14,7 +14,7 @@ namespace Intru.Services
 
         public WalletService(Context context)
         {
-            this.Context = context;            
+            this.Context = context;
         }
 
         public Wallet GetWalletByUsuCod(long usuCod)
@@ -55,6 +55,7 @@ namespace Intru.Services
                     item.CodWallet = codWallet;
                     item.BankNavigation = bank;
                     item.TypeCard = "C";
+                    item.Type = "1";
                 }
 
                 foreach (var item in wallet.Payments)
@@ -141,13 +142,13 @@ namespace Intru.Services
                 {
                     var wallet = new
                     {
-                       Payments = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P")
+                        Payments = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "P")
                         .ToList(),
 
-                       Cards = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C")
+                        Cards = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "C")
                         .ToList().GroupBy(x => new { x.TimeString }),
 
-                       FlowClosed = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F")
+                        FlowClosed = Context.Card.Where(x => x.CodWallet == QueryWallet.CodWallet && x.TypeCard == "F")
                         .ToList()
                     };
 
@@ -167,6 +168,111 @@ namespace Intru.Services
                 }
 
                 return parameters;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public WalletViewModel GetCardsByUsuCod(long codUsuario, string dataJoined = "")
+        {
+            try
+            {
+                Wallet QueryWallet = new Wallet();
+
+                WalletViewModel retorno = new WalletViewModel
+                {
+                    TimeString = new List<string>(),
+                    Cards = new List<CardViewModel>()
+                };
+
+
+                var queryData = string.IsNullOrEmpty(dataJoined) ? Array.Empty<string>() : dataJoined.Split(",");
+
+                QueryWallet = Context.Usuario.Include(x => x.WalletNavigation).ThenInclude(x => x.BankNavigation)
+                  .Where(x => x.CodUsuario == codUsuario)
+                  .FirstOrDefault()
+                  .WalletNavigation;
+
+                if (queryData.Length > 0 && (!queryData.Contains("All")) && queryData.Length < 12)
+                {
+                    var wallet = new
+                    {
+                        Cards = new List<CardViewModel>(),
+                    };
+
+                    foreach (var item in queryData)
+                    {
+                        wallet.Cards.AddRange(Context.Card
+                            .Include(x => x.CategoryCardNavigation)
+                            .Where(x => x.WalletNavigation != null)
+                            .Where(x => (x.CodWallet == QueryWallet.CodWallet || x.WalletNavigation.CodWallet == QueryWallet.CodWallet) && x.TypeCard == "C" && x.TimeString.IndexOf(item) > -1 && x.BankNavigation == null)
+                            .Select(x => new CardViewModel
+                            {
+                                Amount = x.Amount,
+                                TimeString = x.TimeString,
+                                Title = x.Title,
+                                TypeCard = x.TypeCard,
+                                Type = x.Type,
+                                CCCod = x.CategoryCardNavigation.CCCod,
+                                CodCard = x.CodCard,
+                                Date = x.Time,                                
+                                CardFixed = x.CategoryCardNavigation.CCTypeFixed,
+                            })
+                            .ToList());
+                    }
+
+                    var group = wallet.Cards.GroupBy(x => new { x.TimeString });
+
+                    foreach (var item in group)
+                    {
+                        retorno.TimeString.Add(item.Key.TimeString);
+                    }
+                
+                    retorno.Cards.AddRange(wallet.Cards
+                        .OrderBy(x => x.Date.Value.Month)
+                        .ThenByDescending(x => Convert.ToDecimal(x.Amount))                                                
+                        .ToList());
+
+                }
+                else
+                {
+                    var wallet = new
+                    {
+                        Cards = Context.Card
+                        .Include(x => x.CategoryCardNavigation)       
+                        .Where(x => x.WalletNavigation != null)
+                        .Where(x => (x.CodWallet == QueryWallet.CodWallet || x.WalletNavigation.CodWallet == QueryWallet.CodWallet) && x.TypeCard == "C").Select(x => new CardViewModel
+                        {
+                            Amount = x.Amount,
+                            TimeString = x.TimeString,
+                            Title = x.Title,
+                            TypeCard = x.TypeCard,
+                            Type = x.Type,
+                            CCCod = x.CategoryCardNavigation.CCCod,
+                            CodCard = x.CodCard,
+                            Date = x.Time,                            
+                            CardFixed = x.CategoryCardNavigation.CCTypeFixed,
+                        })
+                        .ToList()
+                        .GroupBy(x => new { x.TimeString }),
+                    };
+
+                    foreach (var item in wallet.Cards)
+                    {
+                        retorno.TimeString.Add(item.Key.TimeString);
+
+                        foreach (var card in item.OrderBy(x => x.Date.Value.Month)
+                        .ThenByDescending(x => Convert.ToDecimal(x.Amount))
+                        .ToList())
+                        {
+                            retorno.Cards.Add(card);
+                        }
+                    }
+                }
+
+                return retorno;
             }
             catch (Exception)
             {

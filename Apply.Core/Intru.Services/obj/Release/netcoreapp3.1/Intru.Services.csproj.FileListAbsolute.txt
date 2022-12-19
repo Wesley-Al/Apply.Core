@@ -1,0 +1,13 @@
+D:\git\Apply.Core\Apply.Core\Intru.Services\bin\Release\netcoreapp3.1\Intru.Services.deps.json
+D:\git\Apply.Core\Apply.Core\Intru.Services\bin\Release\netcoreapp3.1\Intru.Services.dll
+D:\git\Apply.Core\Apply.Core\Intru.Services\bin\Release\netcoreapp3.1\Intru.Services.pdb
+D:\git\Apply.Core\Apply.Core\Intru.Services\bin\Release\netcoreapp3.1\Intru.Library.dll
+D:\git\Apply.Core\Apply.Core\Intru.Services\bin\Release\netcoreapp3.1\Intru.Library.pdb
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.csproj.AssemblyReference.cache
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.AssemblyInfoInputs.cache
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.AssemblyInfo.cs
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.csproj.CoreCompileInputs.cache
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.csproj.CopyComplete
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.dll
+D:\git\Apply.Core\Apply.Core\Intru.Services\obj\Release\netcoreapp3.1\Intru.Services.pdb

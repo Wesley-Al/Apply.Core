@@ -21,11 +21,31 @@ namespace Intru.Services
             try
             {
                 Context.Card.RemoveRange(Context.Card                    
-                    .Where(x => x.CodWallet == codWallet)
+                    .Where(x => (x.CodWallet == codWallet || x.WalletNavigation.CodWallet == codWallet))
                     .ToArray());                
 
                 return Context.SaveChanges() > 0;
             }catch(Exception)
+            {
+                throw;
+            }
+        }
+        public bool DeleteByCod(long codCard)
+        {
+            try
+            {
+                Cards card = Context.Card
+                    .Where(x => x.CodCard == codCard)
+                    .FirstOrDefault();
+
+                if (card != null)
+                {
+                    Context.Card.Remove(card);
+                }
+
+                return Context.SaveChanges() > 0;
+            }
+            catch (Exception)
             {
                 throw;
             }
@@ -51,7 +71,8 @@ namespace Intru.Services
                     DateRegistro = DateTime.Now,
                     Title = cards.Title,
                     Type = cards.Type,
-                    Amount = cards.Amount,
+                    Amount = cards.Amount.Replace(".", ","),
+                    TypeCard = cards.TypeCard,
                     Description = cards.Description                   
                 };                               
 

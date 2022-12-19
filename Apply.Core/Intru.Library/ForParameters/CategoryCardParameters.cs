@@ -9,6 +9,7 @@ namespace Intru.Library
         public List<long> CCCodList { get; set; }
         public long? CCCod { get; set; }
         public string CCName { get; set; }
+        public string Color { get; set; }
         public bool? CCTypeFixed { get; set; }
         public long UsuCod { get; set; }
     }

@@ -30,8 +30,8 @@ namespace Intru
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string mySqlConection = "server=156.67.72.1; port=3306; database=u922704232_apply; user=u922704232_wesley; password={Programador}2";//Configuration.GetConnectionString("Conn");
-            string[] origins = new string[] { "https://intru.net", "http://intru" };
+            //string mySqlConection = Configuration.GetConnectionString("Conn");
+            string[] origins = new string[] { "https://intru.net", "http://intru", "http://127.0.0.1:5500", "http://localhost:3000" };
 
             services.AddCors(options =>
             {
@@ -62,11 +62,14 @@ namespace Intru
             services.AddScoped<IWalletService, WalletService>();
             services.AddScoped<ICardsService, CardsService>();
             services.AddScoped<ISecurityService, SecurityService>();
-            services.AddScoped<ICategoryService, CategoryService>(); 
+            services.AddScoped<ICategoryService, CategoryService>();
 
-            services.AddDbContextPool<Context>(options =>
+
+            services.AddDbContextPool<Context>(options => options.UseSqlServer("Server=localhost;Database=FitWallet;Trusted_Connection=True;"));
+
+            /*services.AddDbContextPool<Context>(options =>
                 options.UseMySql(mySqlConection,
-                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Intru.Library")));            
+                      ServerVersion.AutoDetect(mySqlConection), b => b.MigrationsAssembly("Intru.Library")));            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,7 +89,7 @@ namespace Intru
             //app.UseCors();
             app.UseCors(MyAllowSpecificOrigins);
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

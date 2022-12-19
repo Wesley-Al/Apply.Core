@@ -11,5 +11,6 @@ namespace Intru.Services
         Task<bool> InsertData(WalletParameters wallet);
         public Wallet GetWalletByUsuCod(long usuCod);
         public WalletParameters GetByUsuCod(long codUsuario, string dataJoined = "");
+        public WalletViewModel GetCardsByUsuCod(long codUsuario, string dataJoined = "");
     }
 }
